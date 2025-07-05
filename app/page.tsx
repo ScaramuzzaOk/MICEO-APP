@@ -11,9 +11,11 @@ export default function HomePage() {
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <GamificationProvider>
         <SidebarProvider>
-          <div className="min-h-screen bg-background">
-            <MainContent />
-            <Toaster />
+          <div className="min-h-screen bg-background flex justify-center px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-4xl">
+              <MainContent />
+              <Toaster />
+            </div>
           </div>
         </SidebarProvider>
       </GamificationProvider>
