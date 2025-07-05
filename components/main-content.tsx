@@ -12,7 +12,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
-// Importar todas las secciones
 import { Dashboard } from "@/components/sections/dashboard"
 import { AICoachChat } from "@/components/ai-coach-chat"
 import { Tasks } from "@/components/sections/tasks"
@@ -96,8 +95,13 @@ export function MainContent() {
           </Breadcrumb>
         </header>
 
+        {/* CONTENEDOR ADAPTADO A PANTALLAS GRANDES */}
         <div className="flex-1 overflow-auto bg-gradient-to-br from-slate-50 to-indigo-50 dark:from-slate-950 dark:to-indigo-950">
-          <div className="p-6 h-full">{renderSection()}</div>
+          <div className="p-4 sm:p-6 h-full w-full flex justify-center">
+            <div className="w-full max-w-4xl">
+              {renderSection()}
+            </div>
+          </div>
         </div>
       </SidebarInset>
     </>
