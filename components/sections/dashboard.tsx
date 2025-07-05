@@ -4,10 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Target, Clock, BookOpen, Zap, Trophy, CheckCircle, Star, ArrowRight, TrendingUp, Activity } from "lucide-react"
+import { Target, Clock, BookOpen, Zap, Trophy, Calendar, CheckCircle, Star, ArrowRight } from "lucide-react"
 import { useGamification } from "@/components/gamification-provider"
-import { AnalyticsChart } from "@/components/analytics-chart"
-import { NutritionGoalsChart } from "@/components/nutrition-goals-chart"
 
 export function Dashboard() {
   const { level, xp, streak, achievements } = useGamification()
@@ -109,37 +107,6 @@ export function Dashboard() {
         ))}
       </div>
 
-      {/* Gráficos principales */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Gráfico de Analytics */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Activity className="w-5 h-5" />
-              Análisis de Progreso
-            </CardTitle>
-            <CardDescription>Tu rendimiento en las últimas semanas</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <AnalyticsChart />
-          </CardContent>
-        </Card>
-
-        {/* Gráfico de Objetivos Nutricionales */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Target className="w-5 h-5" />
-              Objetivos Nutricionales
-            </CardTitle>
-            <CardDescription>Progreso diario de macronutrientes y calorías</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <NutritionGoalsChart />
-          </CardContent>
-        </Card>
-      </div>
-
       {/* Cursos en progreso */}
       <Card>
         <CardHeader>
@@ -221,21 +188,21 @@ export function Dashboard() {
         <Card className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-green-700 dark:text-green-300">
-              <TrendingUp className="w-5 h-5" />
-              Análisis Semanal IA
+              <Calendar className="w-5 h-5" />
+              Exportar Datos
             </CardTitle>
-            <CardDescription>Obtén insights personalizados sobre tu progreso</CardDescription>
+            <CardDescription>Descarga tu progreso y estadísticas en diferentes formatos</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-sm">Análisis disponible</span>
-                <span className="font-semibold">Generar reporte</span>
+                <span className="text-sm">Configuración</span>
+                <span className="font-semibold">Continuar</span>
               </div>
               <Progress value={100} className="h-2" />
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>Datos suficientes</span>
-                <span>Ver análisis</span>
+                <span>Listo para exportar</span>
+                <span>Descargar</span>
               </div>
             </div>
           </CardContent>
